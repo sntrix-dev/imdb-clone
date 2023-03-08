@@ -1,0 +1,13 @@
+@import url("../../utils.css");
+
+.rounded-full {
+  border-radius: var(--rounded-full);
+}
+
+.rounded-md {
+  border-radius: var(--rounded-md);
+}
+
+.rounded-sm {
+  border-radius: var(--rounded-sm);
+}

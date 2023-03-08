@@ -1,0 +1,38 @@
+@import url("../../../utils.css");
+
+.pagination-wrapper {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-num-wrapper {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.pagination-num-wrapper button {
+  background-color: transparent;
+  color: var(--text-color);
+  outline: none;
+  border: none;
+  font-size: 16px;
+  margin: 0rem 0.5rem;
+}
+
+.pagination-num-wrapper button.active {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.arrow-icon {
+  background-color: transparent;
+  color: var(--text-color);
+  outline: none;
+  border: none;
+  font-size: 18px;
+}

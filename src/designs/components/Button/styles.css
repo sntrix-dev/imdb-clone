@@ -1,0 +1,21 @@
+@import url("../../../utils.css");
+
+.width-full {
+  width: 100%;
+  padding: 0.75rem;
+}
+
+.size-sm {
+}
+
+.button {
+  border-radius: var(--rounded-md);
+  background-color: var(--primary-color);
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--text-color);
+  outline: none;
+  border: none;
+  margin: 0.5rem 0rem;
+  font-size: 14px;
+}

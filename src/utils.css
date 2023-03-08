@@ -1,0 +1,13 @@
+:root {
+  --button-bg-color: linear-gradient(180deg, #ff9966 0%, #ff5e62 100%);
+  --navbar-bg-color: #263f61;
+  --text-color: #ffffff;
+  --bg-color: #0c111b;
+  --card-details-bg-color: linear-gradient(0deg, #1a2b4a 0%, #2b507c 105.38%);
+  --rating-number-color: #cccccc;
+  --rating-star-color: #ffe234;
+  --primary-color: #ff7d65;
+  --rounded-md: 1rem;
+  --rounded-sm: 5px;
+  --rounded-full: 9999px;
+}

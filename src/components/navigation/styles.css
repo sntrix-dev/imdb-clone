@@ -1,0 +1,45 @@
+@import url("../../utils.css");
+
+header {
+  width: 100%;
+  background-color: var(--navbar-bg-color);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+header div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+.nav-search-desktop {
+}
+
+.nav-search-mobile {
+  display: none;
+}
+.logout-button {
+  color: var(--text-color);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width: 680px) {
+  .nav-search-desktop {
+    display: none;
+  }
+  .nav-search-mobile {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,42 @@
+@import url("../../utils.css");
+
+nav {
+  width: max-content;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 20rem;
+  max-width: 20rem;
+  height: 2.25rem;
+  overflow: hidden;
+  border: 1px solid #ffffff42;
+  border-radius: var(--rounded-sm);
+}
+
+.search-input {
+  width: calc(100% - 2.5rem);
+  padding: 0.5rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  background-color: #ffffff0f;
+  color: var(--text-color);
+}
+.search-input::placeholder {
+  color: var(--text-color);
+}
+
+.search-button {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@media only screen and (max-width: 680px) {
+  .search-wrapper {
+    max-width: 100%;
+  }
+}

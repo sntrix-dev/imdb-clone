@@ -1,0 +1,44 @@
+@import url("../../utils.css");
+
+main {
+  height: 100vh;
+}
+
+.login-section {
+  width: 100%;
+  height: calc(100vh - 3.45125rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: var(--rounded-md);
+  background-color: #ffffff;
+  color: #000000;
+  width: 90%;
+  max-width: 30rem;
+}
+
+.card h3 {
+  color: #263238;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.card p {
+  color: #546e7a;
+  font-size: 14px;
+  margin: 0.25rem 0rem;
+}
+
+.card .title {
+  margin-bottom: 1.5rem;
+}
+
+p.error-msg {
+  color: #ff0000;
+  font-size: 12px;
+}

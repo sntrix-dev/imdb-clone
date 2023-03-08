@@ -1,0 +1,21 @@
+@import url("../../../utils.css");
+@import url("../../styles/index.css");
+.wrapper {
+  width: 100%;
+  height: auto;
+  margin: 0.5rem 0rem;
+}
+
+.text-field-input {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border-radius: var(--rounded-md);
+  margin: 0.25rem 0rem;
+  border-color: #0000003b;
+}
+
+.text-field-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}

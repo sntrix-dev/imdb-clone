@@ -1,0 +1,36 @@
+@import url("../../utils.css");
+
+.home-section {
+  width: 100%;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.home-data-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 2rem 1rem;
+  margin-top: 2rem;
+  overflow-x: hidden;
+}
+
+@media only screen and (min-width: 920px) and (max-width: 1156px) {
+  .home-data-wrapper {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .home-data-wrapper {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 920px) {
+  .home-data-wrapper {
+    grid-template-columns: auto auto;
+  }
+}
