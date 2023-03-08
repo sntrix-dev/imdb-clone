@@ -1,28 +1,30 @@
 import { createContext, useState } from "react";
 
 const initialState = {
-  data: {},
+  notification: null,
 };
-export const AuthContext = createContext(initialState);
+export const ToastContext = createContext(initialState);
 
-const AuthContextProvider = ({ children }) => {
+const ToastContextProvider = ({ children }) => {
   const [state, setState] = useState(initialState);
 
-  const updateState = (data) => {
-    setState(data);
+  const notify = (notification) => {
+    setState({
+      notification,
+    });
   };
 
   return (
-    <AuthContext.Provider
+    <ToastContext.Provider
       value={{
-        data: state.data,
-        updateState,
+        notification: state.notification,
+        notify,
       }}
     >
       {" "}
       {children}
-    </AuthContext.Provider>
+    </ToastContext.Provider>
   );
 };
 
-export default AuthContextProvider;
+export default ToastContextProvider;

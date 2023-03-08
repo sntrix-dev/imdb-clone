@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Navbar } from "../../components/navigation";
-import { AuthContext } from "../../context";
 import { Button, TextField } from "../../designs/components";
 import { login, requestToken } from "../../services/apis";
 import "./styles.css";
@@ -14,8 +14,11 @@ const Login = () => {
   // {type: 'common', message: ''}
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
-  const { updateState } = useContext(AuthContext);
   const navigate = useNavigate();
+  const notify = () =>
+    toast("Logged in", {
+      type: "success",
+    });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,8 +38,8 @@ const Login = () => {
                   setLoading(false);
                   const data = loginRes.data;
                   window.localStorage.setItem("x-auth", JSON.stringify(data));
-                  updateState(data);
                   navigate("/");
+                  notify();
                 })
                 .catch((loginErr) => {
                   if (

@@ -1,0 +1,59 @@
+@import url("../../../utils.css");
+
+.toastify-wrapper {
+  position: fixed;
+  width: 20rem;
+  right: 2rem;
+  bottom: 2rem;
+  height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  z-index: 20;
+}
+
+.toast-wrapper {
+  background-color: rgb(38, 63, 97);
+  border-radius: var(--rounded-sm);
+  box-shadow: 4px 8px 4px 24px rgba(38, 63, 97, 0.1);
+  width: 100%;
+  display: flex;
+  align-items: start;
+  height: max-content;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.toast-wrapper .exit {
+  transform: translateX(calc(100% + 4rem));
+}
+
+.toast-wrapper .enter {
+  transform: translateX(0);
+}
+
+.toast-wrapper h4 {
+  padding: 1rem;
+}
+
+.severity-indicator {
+  width: 0.5rem;
+  height: 100%;
+}
+
+.success-bg {
+  background-color: #4bb543;
+}
+
+.error-bg {
+  background-color: #ff0000;
+}
+
+.info-bg {
+  background-color: #0000ff;
+}
+
+.warning-bg {
+  background-color: #eed202;
+}

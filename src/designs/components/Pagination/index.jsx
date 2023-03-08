@@ -45,7 +45,7 @@ const Pagination = ({ totalPage, renderItem }) => {
     setPage(p);
   };
 
-  console.log(memosizedSequence);
+  // console.log(memosizedSequence);
 
   return (
     <>

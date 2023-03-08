@@ -3,6 +3,7 @@
 .movie-card {
   width: 100%;
   overflow-x: hidden;
+  cursor: pointer;
 }
 
 .movie-image-wrapper {

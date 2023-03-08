@@ -1,11 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AuthContextProvider from "./context";
+import { ToastContainer } from "react-toastify";
+import ToastContextProvider from "./context";
+// import Toastify from "./designs/components/Toast";
 import { Home, Login, MovieDetail } from "./pages";
 import { AuthWrapper } from "./services/auth/validator";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
-    <AuthContextProvider>
+    <ToastContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -27,7 +30,9 @@ const App = () => {
           />
         </Routes>
       </BrowserRouter>
-    </AuthContextProvider>
+      {/* <Toastify /> */}
+      <ToastContainer autoClose={3000} />
+    </ToastContextProvider>
   );
 };
 
