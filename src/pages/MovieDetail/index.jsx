@@ -1,13 +1,18 @@
-import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeftLong, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../../components/navigation";
+import Trailer from "../../components/Trailer";
+import { IconButton, Modal } from "../../designs/components";
 import { getMovieDetails } from "../../services/apis";
 import "./styles.css";
 
 const MovieDetail = () => {
   const [data, setData] = useState();
+  const [openVideoModal, setOpenVideoModal] = useState(false);
+  const [toggleToVideo, setToggleToVideo] = useState(false);
+  const mobilePlayRef = useRef(null);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -24,6 +29,8 @@ const MovieDetail = () => {
     }
   }, [id]);
 
+  console.log(mobilePlayRef);
+
   return (
     <main className="container">
       <Navbar showLogout />
@@ -36,13 +43,29 @@ const MovieDetail = () => {
               height="100%"
               className="desktop"
             />
-            <img
-              src={`${process.env.REACT_APP_IMAGE_BASE_URL}/${data.backdrop_path}`}
-              alt=""
-              width="100%"
-              className="mobile"
-            />
+            {toggleToVideo && mobilePlayRef.current ? (
+              <Trailer
+                id={id}
+                width={mobilePlayRef.current.clientWidth}
+                height={mobilePlayRef.current.clientHeight}
+              />
+            ) : (
+              <img
+                ref={mobilePlayRef}
+                src={`${process.env.REACT_APP_IMAGE_BASE_URL}/${data.backdrop_path}`}
+                alt=""
+                width="100%"
+                className="mobile"
+              />
+            )}
             <div className="movie-details-bg" />
+            {!toggleToVideo && (
+              <div className="movie-play-icon-wrapper-mobile">
+                <IconButton size="full" onClick={() => setToggleToVideo(true)}>
+                  <FontAwesomeIcon icon={faPlay} />
+                </IconButton>
+              </div>
+            )}
           </div>
           <div className="normal-bg" />
           <div className="movie-info-container-desktop hide-scrollbar">
@@ -68,8 +91,18 @@ const MovieDetail = () => {
               </h3>
             </div>
           </div>
+          <div className="movie-play-icon-wrapper-desktop">
+            <IconButton size="full" onClick={() => setOpenVideoModal(true)}>
+              <FontAwesomeIcon icon={faPlay} />
+            </IconButton>
+          </div>
         </section>
       )}
+      <Modal open={openVideoModal} onClose={() => setOpenVideoModal(false)}>
+        <div>
+          <Trailer id={id} width={720} height={360} />
+        </div>
+      </Modal>
     </main>
   );
 };

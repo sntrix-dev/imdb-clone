@@ -1,0 +1,40 @@
+@import url("../../../utils.css");
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  background: #00000052;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms ease;
+}
+
+.modal-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-close {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-wrapper {
+  position: relative;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  color: var(--text-color);
+  outline: none;
+  border: none;
+  font-size: 20px;
+}

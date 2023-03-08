@@ -9,6 +9,7 @@ main {
   height: calc(100vh - 3rem);
   /* overflow-x: hidden; */
   position: relative;
+  z-index: 0;
 }
 
 .bg-image-wrapper {
@@ -16,7 +17,7 @@ main {
   width: 75%;
   height: 100%;
   transform: translateX(50%);
-  z-index: -1;
+  z-index: -2;
   left: 0;
 }
 
@@ -35,13 +36,14 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  z-index: -3;
 }
 
 .movie-info-container-desktop {
   padding: 2rem;
   height: 100%;
   overflow-y: auto;
+  z-index: -2;
 }
 
 button.back-button {
@@ -95,7 +97,37 @@ img.mobile {
   display: none;
 }
 
+.movie-play-icon-wrapper-desktop {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--rounded-full);
+  overflow: hidden;
+  top: calc(50% - (4rem / 2));
+  left: calc(75% - (4rem / 2));
+  cursor: pointer;
+  z-index: 5;
+  display: inline-block;
+}
+.movie-play-icon-wrapper-mobile {
+  display: none;
+}
 @media only screen and (max-width: 640px) {
+  .movie-play-icon-wrapper-desktop {
+    display: none;
+  }
+  .movie-play-icon-wrapper-mobile {
+    display: inline-block;
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--rounded-full);
+    overflow: hidden;
+    top: calc(50% - (2.5rem / 2));
+    left: calc(50% - (2.5rem / 2));
+    cursor: pointer;
+    z-index: 5;
+  }
   main {
     height: auto;
   }
@@ -103,7 +135,7 @@ img.mobile {
     height: auto;
   }
   .bg-image-wrapper {
-    position: static;
+    position: relative;
     width: 100%;
     height: auto;
     transform: translateX(0%);
@@ -125,7 +157,7 @@ img.mobile {
 
   button.back-button {
     position: absolute;
-    top: calc(3.45125rem + 1rem);
+    top: 1rem;
     left: 1rem;
   }
   .movie-info-container-desktop {
