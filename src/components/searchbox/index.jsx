@@ -8,8 +8,8 @@ import { SearchContext } from "../../context";
 
 const SearchBox = () => {
   // let [searchParams, setSearchParams] = useSearchParams();
-  const { updateSearch } = useContext(SearchContext);
-  const [search, setSearch] = useState("");
+  const { query, updateSearch } = useContext(SearchContext);
+  const [search, setSearch] = useState(query);
   const deferredValue = useDeferredValue(search);
 
   useEffect(() => {

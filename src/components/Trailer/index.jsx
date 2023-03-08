@@ -8,7 +8,11 @@ const Trailer = ({ id, width, height }) => {
     getVideoDetails(id)
       .then((res) => {
         const data = res.data.results;
-        setDetails(data.filter((item) => item.type === "Trailer")[0]);
+        setDetails(
+          data.filter(
+            (item) => item.type === "Trailer" || item.type === "Teaser"
+          )[0]
+        );
       })
       .catch((err) => {
         console.log(err);

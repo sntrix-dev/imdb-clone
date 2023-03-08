@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 const initialState = {
-  query: null,
+  query: "",
 };
 export const SearchContext = createContext(initialState);
 
