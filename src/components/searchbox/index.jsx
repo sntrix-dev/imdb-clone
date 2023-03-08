@@ -2,27 +2,31 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.css";
 import { IconButton } from "../../designs/components";
-import { useSearchParams } from "react-router-dom";
+// import { useSearchParams } from "react-router-dom";
+import { useContext, useDeferredValue, useEffect, useState } from "react";
+import { SearchContext } from "../../context";
 
 const SearchBox = () => {
-  let [searchParams, setSearchParams] = useSearchParams();
+  // let [searchParams, setSearchParams] = useSearchParams();
+  const { updateSearch } = useContext(SearchContext);
+  const [search, setSearch] = useState("");
+  const deferredValue = useDeferredValue(search);
 
-  const handleSearchUpdate = (value) => {
-    if (value) {
-      setSearchParams({
-        search: value,
-      });
+  useEffect(() => {
+    if (deferredValue) {
+      updateSearch(deferredValue);
     } else {
-      setSearchParams({});
+      updateSearch("");
     }
-  };
+  }, [deferredValue]);
 
   return (
     <div className="search-wrapper">
       <input
         className="search-input"
         placeholder="Search movies"
-        onChange={(e) => handleSearchUpdate(e.target.value)}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
       <div className="search-button">
         <IconButton size="full">

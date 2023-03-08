@@ -1,30 +1,30 @@
 import { createContext, useState } from "react";
 
 const initialState = {
-  notification: null,
+  query: null,
 };
-export const ToastContext = createContext(initialState);
+export const SearchContext = createContext(initialState);
 
-const ToastContextProvider = ({ children }) => {
+const SearchContextProvider = ({ children }) => {
   const [state, setState] = useState(initialState);
 
-  const notify = (notification) => {
+  const updateSearch = (query) => {
     setState({
-      notification,
+      query,
     });
   };
 
   return (
-    <ToastContext.Provider
+    <SearchContext.Provider
       value={{
-        notification: state.notification,
-        notify,
+        query: state.query,
+        updateSearch,
       }}
     >
       {" "}
       {children}
-    </ToastContext.Provider>
+    </SearchContext.Provider>
   );
 };
 
-export default ToastContextProvider;
+export default SearchContextProvider;

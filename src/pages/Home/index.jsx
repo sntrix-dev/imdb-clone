@@ -1,7 +1,9 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Banner } from "../../components/home";
+import { LoadingScreen } from "../../components/LoadingScreen";
 import { Navbar } from "../../components/navigation";
+import { SearchContext } from "../../context";
 import { Pagination } from "../../designs/components";
 import { MoviesList } from "../../services/sources";
 import "./styles.css";
@@ -13,8 +15,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Home = () => {
   const [totalPage, setTotalPage] = useState(1);
-  const [searchparams] = useSearchParams();
-  let query = searchparams.get("search");
+  // const [searchparams] = useSearchParams();
+  const { query } = useContext(SearchContext);
   return (
     <main className="container">
       <Navbar showLogout showSearchBox />
@@ -30,7 +32,10 @@ const Home = () => {
                   query={query}
                   page={page}
                   setTotalPage={setTotalPage}
-                  renderItem={(data) => {
+                  renderItem={(data, loading) => {
+                    if (loading) {
+                      return <LoadingScreen />;
+                    }
                     return data.map((item) => (
                       <MovieCard
                         key={item.id}
