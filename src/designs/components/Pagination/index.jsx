@@ -13,11 +13,6 @@ const Pagination = ({ totalPage, renderItem, resetPage }) => {
   const navigate = useNavigate();
 
   const memosizedSequence = useMemo(() => {
-    navigate(".", {
-      state: {
-        page,
-      },
-    });
     const sequence = new Set([]);
     let initial = page;
     if (page - 2 > 0) {
@@ -44,6 +39,16 @@ const Pagination = ({ totalPage, renderItem, resetPage }) => {
   useEffect(() => {
     setPage(1);
   }, [resetPage]);
+
+  useEffect(
+    () =>
+      navigate(".", {
+        state: {
+          page,
+        },
+      }),
+    [page]
+  );
 
   useEffect(() => {
     if (state.page) {
