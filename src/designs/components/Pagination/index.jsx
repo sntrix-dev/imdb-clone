@@ -4,16 +4,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./styles.css";
 
 const Pagination = ({ totalPage, renderItem, resetPage }) => {
   const { state } = useLocation();
   const [page, setPage] = useState(state?.page ?? 1);
+  const navigate = useNavigate();
 
   console.log("actual page", state.page);
 
   const memosizedSequence = useMemo(() => {
+    navigate(".", {
+      state: {
+        page,
+      },
+    });
     const sequence = new Set([]);
     let initial = page;
     if (page - 2 > 0) {
