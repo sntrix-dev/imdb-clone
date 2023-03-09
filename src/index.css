@@ -20,6 +20,7 @@ body {
 button {
   outline: none;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
 /* global Css */
