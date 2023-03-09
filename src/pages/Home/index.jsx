@@ -15,7 +15,6 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Home = () => {
   const [totalPage, setTotalPage] = useState(1);
-  // const [searchparams] = useSearchParams();
   const { query } = useContext(SearchContext);
   return (
     <main className="container">
@@ -26,6 +25,7 @@ const Home = () => {
         <div className="home-data-wrapper">
           <Pagination
             totalPage={totalPage}
+            resetPage={query}
             renderItem={(page) => (
               <Suspense fallback={<></>}>
                 <MoviesList
@@ -42,6 +42,7 @@ const Home = () => {
                         {...item}
                         baseUrl={BASE_URL}
                         apiKey={API_KEY}
+                        currentPage={page}
                       />
                     ));
                   }}

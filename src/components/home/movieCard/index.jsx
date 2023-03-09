@@ -13,11 +13,21 @@ const MovieCard = ({
   id,
   baseUrl,
   apiKey,
+  currentPage,
 }) => {
   const navigate = useNavigate();
   const imageUrl = `${baseUrl}${backdrop_path}?api_key=${apiKey}`;
   return (
-    <div className="movie-card" onClick={() => navigate(`/movie/${id}`)}>
+    <div
+      className="movie-card"
+      onClick={() =>
+        navigate(`/movie/${id}`, {
+          state: {
+            page: currentPage,
+          },
+        })
+      }
+    >
       <div className="movie-image-wrapper">
         <img src={imageUrl} alt="" width="100%" />
       </div>
@@ -33,11 +43,7 @@ const MovieCard = ({
             </label>
           </div>
         </div>
-        <IconButton
-          size="size-lg"
-          roundedFull
-          onClick={() => navigate(`/movie/${id}`)}
-        >
+        <IconButton size="size-lg" roundedFull>
           <FontAwesomeIcon icon={faPlay} />
         </IconButton>
       </div>

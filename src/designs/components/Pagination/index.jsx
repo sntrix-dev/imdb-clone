@@ -3,11 +3,15 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./styles.css";
 
-const Pagination = ({ totalPage, renderItem }) => {
-  const [page, setPage] = useState(1);
+const Pagination = ({ totalPage, renderItem, resetPage }) => {
+  const { state } = useLocation();
+  const [page, setPage] = useState(state?.page ?? 1);
+
+  console.log("actual page", state.page);
 
   const memosizedSequence = useMemo(() => {
     const sequence = new Set([]);
@@ -32,6 +36,16 @@ const Pagination = ({ totalPage, renderItem }) => {
     }
     return Array.from(sequence);
   }, [page, totalPage]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [resetPage]);
+
+  useEffect(() => {
+    if (state.page) {
+      setPage(state.page);
+    }
+  }, [state.page]);
 
   const setPrevPage = () => {
     setPage((prevPage) => prevPage - 1);

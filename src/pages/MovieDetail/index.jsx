@@ -1,7 +1,7 @@
 import { faArrowLeftLong, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../../components/navigation";
 import Trailer from "../../components/Trailer";
 import { IconButton, Modal } from "../../designs/components";
@@ -13,7 +13,7 @@ const MovieDetail = () => {
   const [openVideoModal, setOpenVideoModal] = useState(false);
   const [toggleToVideo, setToggleToVideo] = useState(false);
   const mobilePlayRef = useRef(null);
-
+  const location = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -69,7 +69,16 @@ const MovieDetail = () => {
           </div>
           <div className="normal-bg" />
           <div className="movie-info-container-desktop hide-scrollbar">
-            <button onClick={() => navigate("/")} className="back-button">
+            <button
+              onClick={() =>
+                navigate("/", {
+                  state: {
+                    page: location?.state?.page,
+                  },
+                })
+              }
+              className="back-button"
+            >
               <FontAwesomeIcon icon={faArrowLeftLong} />
             </button>
             <h1 className="title">{data.title}</h1>
