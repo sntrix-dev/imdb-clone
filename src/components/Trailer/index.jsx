@@ -15,7 +15,7 @@ const Trailer = ({ id, width, height }) => {
         );
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, [id]);
 
@@ -25,6 +25,7 @@ const Trailer = ({ id, width, height }) => {
       frameBorder={0}
       width={width}
       height={height}
+      title={details.title}
     />
   ) : (
     <></>

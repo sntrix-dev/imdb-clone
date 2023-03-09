@@ -89,13 +89,3 @@ export const getVideoDetails = async (id) => {
     throw err;
   }
 };
-
-<iframe
-  width="722"
-  height="406"
-  src="https://www.youtube.com/embed/EMNwyhrmu0M"
-  title="KABZAA | Official Kannada Trailer | Upendra |Sudeepa | Shivarajkumar |Shriya | R.Chandru|Ravi Basrur"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen
-></iframe>;

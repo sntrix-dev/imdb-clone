@@ -40,7 +40,7 @@ const Login = () => {
                   setLoading(false);
                   const data = loginRes.data;
                   window.localStorage.setItem("x-auth", JSON.stringify(data));
-                  navigate("/");
+                  navigate("/movies");
                   notify();
                 })
                 .catch((loginErr) => {
@@ -103,9 +103,9 @@ const Login = () => {
                   username: e.target.value,
                 }))
               }
-              severity={error && error.type == "username" ? "error" : ""}
+              severity={error && error.type === "username" ? "error" : ""}
               helperText={
-                error && error.type == "username" ? error.message : ""
+                error && error.type === "username" ? error.message : ""
               }
             />
             <TextField
@@ -117,9 +117,9 @@ const Login = () => {
                   password: e.target.value,
                 }))
               }
-              severity={error && error.type == "password" ? "error" : ""}
+              severity={error && error.type === "password" ? "error" : ""}
               helperText={
-                error && error.type == "password" ? error.message : ""
+                error && error.type === "password" ? error.message : ""
               }
             />
           </div>

@@ -5,7 +5,6 @@ import { Navbar } from "../../components/navigation";
 import { SearchContext } from "../../context";
 import { Menu, Pagination } from "../../designs/components";
 import { MoviesList } from "../../services/sources";
-// import MovieCard from "../../components/home/movieCard/index";
 import "./styles.css";
 
 const MovieCard = lazy(() => import("../../components/home/movieCard/index"));

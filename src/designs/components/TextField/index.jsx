@@ -33,7 +33,7 @@ const TextField = ({ severity = "error", helperText = "", ...props }) => {
       {helperText && (
         <p
           style={{
-            color: severity == "error" ? "#ff0000" : "",
+            color: severity === "error" ? "#ff0000" : "",
             fontSize: "12px",
           }}
         >

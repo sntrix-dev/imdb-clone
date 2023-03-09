@@ -24,12 +24,10 @@ const MovieDetail = () => {
           setData(res.data);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
         });
     }
   }, [id]);
-
-  console.log(mobilePlayRef);
 
   return (
     <main className="container">
@@ -71,7 +69,7 @@ const MovieDetail = () => {
           <div className="movie-info-container-desktop hide-scrollbar">
             <button
               onClick={() =>
-                navigate("/", {
+                navigate("/movies", {
                   state: {
                     page: location?.state?.page,
                   },

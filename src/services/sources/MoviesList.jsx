@@ -21,7 +21,7 @@ export function MoviesList({
           setLoading(false);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
           setLoading(false);
         });
     } else {
@@ -32,7 +32,7 @@ export function MoviesList({
           setLoading(false);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
           setLoading(false);
         });
     }

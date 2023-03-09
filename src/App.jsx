@@ -10,9 +10,9 @@ const App = () => {
     <SearchContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route
-            path="/"
+            path="/movies"
             element={
               <AuthWrapper>
                 <Home />

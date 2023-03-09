@@ -51,10 +51,10 @@ const Pagination = ({ totalPage, renderItem, resetPage }) => {
   );
 
   useEffect(() => {
-    if (state.page) {
+    if (state?.page ?? false) {
       setPage(state.page);
     }
-  }, [state.page]);
+  }, [state]);
 
   const setPrevPage = () => {
     setPage((prevPage) => prevPage - 1);
@@ -67,8 +67,6 @@ const Pagination = ({ totalPage, renderItem, resetPage }) => {
   const setCustomPage = (p) => {
     setPage(p);
   };
-
-  // console.log(memosizedSequence);
 
   return (
     <>

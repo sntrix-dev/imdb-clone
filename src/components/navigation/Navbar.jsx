@@ -1,20 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import Logo from "../logo";
 import SearchBox from "../searchbox";
 import "./styles.css";
 
 const Navbar = ({ showLogout = false, showSearchBox = false }) => {
   const navigate = useNavigate();
-  // const notify = () =>
-  //   toast("Logged out", {
-  //     type: "success",
-  //   });
 
   const logout = () => {
     window.localStorage.removeItem("x-auth");
-    navigate("/login");
-    // notify();
+    navigate("/");
   };
 
   return (
