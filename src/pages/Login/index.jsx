@@ -18,7 +18,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const notify = () =>
-    toast("Logged in", {
+    toast("Logged in successfully", {
       type: "success",
     });
 

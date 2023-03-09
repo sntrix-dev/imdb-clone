@@ -6,15 +6,15 @@ import "./styles.css";
 
 const Navbar = ({ showLogout = false, showSearchBox = false }) => {
   const navigate = useNavigate();
-  const notify = () =>
-    toast("Logged out", {
-      type: "success",
-    });
+  // const notify = () =>
+  //   toast("Logged out", {
+  //     type: "success",
+  //   });
 
   const logout = () => {
     window.localStorage.removeItem("x-auth");
     navigate("/login");
-    notify();
+    // notify();
   };
 
   return (
