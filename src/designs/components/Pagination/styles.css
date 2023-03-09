@@ -36,3 +36,14 @@
   border: none;
   font-size: 18px;
 }
+
+@media only screen and (max-width: 640px) {
+  .pagination-num-wrapper {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .pagination-num-wrapper button {
+    margin: 0rem 0.25rem;
+  }
+}
