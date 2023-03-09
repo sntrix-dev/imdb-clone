@@ -1,3 +1,5 @@
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -125,7 +127,7 @@ const Login = () => {
             {error && error.type === "common" && error.message}
           </p>
           <Button disabled={loading} fullWidth type="submit">
-            Log In
+            {loading ? <FontAwesomeIcon icon={faSpinner} spin /> : "Log In"}
           </Button>
         </form>
       </section>

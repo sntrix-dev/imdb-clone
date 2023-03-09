@@ -4,6 +4,7 @@
   width: 100%;
   height: auto;
   margin: 0.5rem 0rem;
+  position: relative;
 }
 
 .text-field-input {
@@ -18,4 +19,14 @@
 .text-field-input:focus {
   outline: none;
   border-color: var(--primary-color);
+}
+
+.password-eye-button {
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  right: 1rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 16px;
 }
