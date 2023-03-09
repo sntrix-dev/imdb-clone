@@ -8,6 +8,12 @@
   padding-right: 1rem;
 }
 
+.title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .home-data-wrapper {
   width: 100%;
   display: grid;

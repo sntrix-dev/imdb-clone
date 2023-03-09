@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { getMovies, searchMovie } from "../apis";
 
-export function MoviesList({ renderItem, setTotalPage, query = "", page = 1 }) {
+export function MoviesList({
+  renderItem,
+  setTotalPage,
+  query = "",
+  page = 1,
+  RenderElement,
+}) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 

@@ -1,0 +1,62 @@
+@import url("../../../utils.css");
+
+.menu {
+  position: relative;
+  height: min-content;
+}
+
+.menu-icon-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.menu-wrapper {
+  width: max-content;
+  background-color: #fff;
+  border-radius: var(--rounded-sm);
+  overflow: hidden;
+  /* padding: 0.5rem; */
+  position: absolute;
+  top: 2rem;
+  right: 0rem;
+  display: flex;
+  align-items: start;
+  transition: all 150ms ease-in-out;
+  flex-flow: column;
+}
+
+.menu-wrapper.menu-open {
+  opacity: 1;
+  pointer-events: all;
+  top: 2rem;
+}
+
+.menu-wrapper.menu-close {
+  opacity: 0;
+  pointer-events: none;
+  top: 0rem;
+}
+
+.menu-item {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 12px;
+  padding: 0.5rem;
+  transition: all 150ms ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.menu-item.active {
+  color: var(--primary-color);
+}
+.menu-item:hover {
+  background-color: #e8e8e8;
+}

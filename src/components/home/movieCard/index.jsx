@@ -17,6 +17,7 @@ const MovieCard = ({
 }) => {
   const navigate = useNavigate();
   const imageUrl = `${baseUrl}${backdrop_path}?api_key=${apiKey}`;
+
   return (
     <div
       className="movie-card"

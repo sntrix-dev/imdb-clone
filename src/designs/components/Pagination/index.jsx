@@ -12,8 +12,6 @@ const Pagination = ({ totalPage, renderItem, resetPage }) => {
   const [page, setPage] = useState(state?.page ?? 1);
   const navigate = useNavigate();
 
-  console.log("actual page", state.page);
-
   const memosizedSequence = useMemo(() => {
     navigate(".", {
       state: {
