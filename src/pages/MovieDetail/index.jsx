@@ -62,7 +62,7 @@ const MovieDetail = () => {
             {!toggleToVideo && (
               <div className="movie-play-icon-wrapper-mobile">
                 <IconButton size="full" onClick={() => setToggleToVideo(true)}>
-                  <FontAwesomeIcon icon={faPlay} />
+                  <FontAwesomeIcon icon={faPlay} size="2x" />
                 </IconButton>
               </div>
             )}
@@ -102,7 +102,7 @@ const MovieDetail = () => {
           </div>
           <div className="movie-play-icon-wrapper-desktop">
             <IconButton size="full" onClick={() => setOpenVideoModal(true)}>
-              <FontAwesomeIcon icon={faPlay} />
+              <FontAwesomeIcon icon={faPlay} size="2x" />
             </IconButton>
           </div>
         </section>
