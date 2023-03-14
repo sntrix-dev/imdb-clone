@@ -1,6 +1,6 @@
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Navbar } from "../../components/navigation";
@@ -21,6 +21,14 @@ const Login = () => {
     toast("Logged in successfully", {
       type: "success",
     });
+
+  useEffect(() => {
+    if (window) {
+      if (!!window.localStorage.getItem("x-auth")) {
+        navigate("/movies");
+      }
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

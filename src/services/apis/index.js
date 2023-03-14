@@ -6,7 +6,6 @@ const endPoints = {
   getMovies: "/trending/movie/day",
   searchMovie: "/search/movie",
   getMovieDetails: "/movie",
-  getMovieDetails: "/movie",
 };
 
 const instance = axios.create({
