@@ -10,5 +10,5 @@ export const AuthWrapper = ({ children }) => {
   if (data) {
     return validate(data, children);
   }
-  return <Navigate replace to={"/"} />;
+  return children;
 };

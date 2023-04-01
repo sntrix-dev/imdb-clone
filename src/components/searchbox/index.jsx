@@ -16,7 +16,7 @@ const SearchBox = () => {
     } else {
       updateSearch("");
     }
-  }, [deferredValue]);
+  }, [deferredValue, updateSearch]);
 
   return (
     <div className="search-wrapper">

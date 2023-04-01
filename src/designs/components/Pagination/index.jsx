@@ -47,7 +47,7 @@ const Pagination = ({ totalPage, renderItem, resetPage }) => {
           page,
         },
       }),
-    [page]
+    [page, navigate]
   );
 
   useEffect(() => {

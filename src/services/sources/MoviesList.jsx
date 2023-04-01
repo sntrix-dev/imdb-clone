@@ -30,7 +30,7 @@ export function MoviesList({ renderItem, setTotalPage, query = "", page = 1 }) {
           setLoading(false);
         });
     }
-  }, [query, page]);
+  }, [query, page, setTotalPage]);
 
   return renderItem(data, loading);
 }

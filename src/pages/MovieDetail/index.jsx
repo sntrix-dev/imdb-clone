@@ -17,7 +17,7 @@ const MovieDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const callApi = () => {
     if (!data) {
       getMovieDetails(id)
         .then((res) => {
@@ -27,7 +27,11 @@ const MovieDetail = () => {
           // console.log(err);
         });
     }
-  }, [id]);
+  };
+
+  useEffect(() => {
+    callApi();
+  }, [id, callApi]);
 
   return (
     <main className="container">

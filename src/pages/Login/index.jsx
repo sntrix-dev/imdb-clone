@@ -10,8 +10,8 @@ import "./styles.css";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    username: "",
-    password: "",
+    username: "suryask",
+    password: "12345",
   });
   // {type: 'common', message: ''}
   const [error, setError] = useState();
@@ -28,7 +28,7 @@ const Login = () => {
         navigate("/movies");
       }
     }
-  }, []);
+  }, [navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -105,6 +105,7 @@ const Login = () => {
             <TextField
               placeholder="Username"
               type="text"
+              value="suryask"
               onChange={(e) =>
                 setCredentials((prevState) => ({
                   ...prevState,
@@ -119,6 +120,7 @@ const Login = () => {
             <TextField
               placeholder="Password"
               type="password"
+              value="12345"
               onChange={(e) =>
                 setCredentials((prevState) => ({
                   ...prevState,
