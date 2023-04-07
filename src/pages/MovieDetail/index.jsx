@@ -31,7 +31,7 @@ const MovieDetail = () => {
 
   useEffect(() => {
     callApi();
-  }, [id, callApi]);
+  }, [id]);
 
   return (
     <main className="container">
